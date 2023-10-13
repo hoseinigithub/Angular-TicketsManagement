@@ -1,0 +1,26 @@
+
+header{
+  height: 10%;
+border-bottom: 1px solid #e5e3e3;
+padding-top: 15px;
+
+}
+#ticket{
+  color:  rgba(0,0,0,.9);
+  font-size: 24px;
+  margin-right: 20px;
+
+}
+
+
+
+main{
+
+height: 80%;
+}
+
+footer{
+  height: 10%;
+}
+
+
