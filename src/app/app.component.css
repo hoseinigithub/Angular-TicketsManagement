@@ -4,13 +4,50 @@ header{
 border-bottom: 1px solid #e5e3e3;
 padding-top: 15px;
 
+
 }
 #ticket{
   color:  rgba(0,0,0,.9);
   font-size: 24px;
   margin-right: 20px;
+  display: inline-block;
+}
+ul,li{
+  display: inline-block;
+}
+
+ul{
+  margin-right: 30px;
+}
+
+li{
+  margin-right: 30px;
+}
+li a{
+  text-decoration: none;
+  color:  rgba(0,0,0,.9);
+  font-size: 20px;
+}
+
+header form{
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+}
+
+header form input{
+  width: 200px;
+  height: 35px;
+  padding-right: 10px;
+  font-size: 18px;
 
 }
+
+header form button{
+  width: 30px;
+  height: 35px;
+}
+
 
 
 
