@@ -1,9 +1,8 @@
 
 header{
-  height: 10%;
+  height: 6.8%;
 border-bottom: 1px solid #e5e3e3;
-padding-top: 15px;
-
+padding-top: 12px
 
 }
 #ticket{
@@ -32,14 +31,15 @@ li a{
 header form{
   display: inline-block;
   position: absolute;
-  left: 10px;
+  left: 20px;
+
 }
 
 header form input{
   width: 200px;
   height: 35px;
   padding-right: 10px;
-  font-size: 18px;
+
 
 }
 
@@ -48,12 +48,109 @@ header form button{
   height: 35px;
 }
 
+header form button:hover{
+  cursor: pointer;
+}
+
 
 
 
 main{
 
 height: 80%;
+}
+
+.cart{
+  width: 500px;
+  height: 300px;
+
+}
+.cartHeader{
+background-color: #0DCAF0;
+  width: 100%;
+  height: 25%;
+}
+
+.cartHeader h3{
+  padding-right: 20px;
+  padding-top: 25px;
+}
+.cartMain{
+  display: flex;
+height: 55%;
+}
+
+.cartRight{
+  width:50%;
+  height: 100%;
+
+}
+
+.cartLeft{
+  width: 50%;
+
+  height: 100%;
+
+}
+.cartFooter{
+  background-color: #F7F7F7;
+  width: 100%;
+  height: 20%;
+}
+.AddMovie{
+  width: 50px;
+  height: 50px;
+  background-color: #40e300;
+  color: black;
+  border: 0;
+  border-radius: 50%;
+  font-size: 28px;
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+}
+.AddMovie:hover{
+  cursor: pointer;
+  background-color: black;
+  color: #40e300;
+}
+.AddMovie:Active{
+  background-color: #40e300;
+  color: black;
+}
+
+.modalAddMovie{
+  width: 100%;
+  height: 100%;
+  background-color: #c5c4c4;
+  position: absolute;
+  top: 0;
+  opacity: 80%;
+}
+.modalContent{
+  width: 500px;
+  height: 600px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 80px;
+  border-radius: 20px;
+  text-align: center;
+
+
+}
+.modalContent form{
+  padding-top: 30px;
+}
+.modalContent form input{
+  margin-bottom: 20px;
+  height: 30px;
+}
+.modalContent form button{
+ width: 70px;
+  height: 25px;
+}
+.modalContent form button:hover{
+cursor: pointer;
 }
 
 footer{
