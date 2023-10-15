@@ -10,7 +10,7 @@ export class APIService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+       'Accept': '*/*'
     })
   };
 

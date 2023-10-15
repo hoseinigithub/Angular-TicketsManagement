@@ -1,14 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {APIService} from './api-service.service';
-
-let name:string;
-let description:string;
-let price:number;
-  let startDate:string;
-  let endDate:string;
-  let movieCategory:number;
-  let imageFile:any;
-
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,40 +9,48 @@ let price:number;
 })
 
 export class AppComponent implements  OnInit {
-
-
-
-
-  constructor(private service: APIService) {
+  public movieForm! :FormGroup;
+  constructor(private service: APIService,private fb:FormBuilder) {
+    this.movieForm=fb.group({
+      'name':[null],
+      'description':[null],
+      'price':[null],
+      'imageFile':[null],
+      'startDate':[null],
+      'endDate':[null],
+      'movieCategory':[null]
+    })
   }
 
-  ngOnInit() {
+  ngOnInit() {}
 
+
+file:any;
+  fileChange(event:any) {
+    let fileList: FileList = event.target.files;
+    this.file = fileList[0];
   }
 
-  SaveMovie(){
-  let  MovieBody = {
-      Name: name,
-      Description: description,
-      Price: price,
-      StartDate: startDate,
-      EndDate: endDate,
-      MovieCategory: movieCategory,
-      ImageFile: imageFile
-    };
 
-    this.service.CreateMovie(MovieBody)
-      .subscribe(response => {
-        alert('OK')
+  saveMovie(){
+    const formData = new FormData();
+    formData.append('imageFile', this.file,this.file.fileName);
+    formData.append('name', this.movieForm.get('name')!.value);
+    formData.append('description', this.movieForm.get('description')!.value);
+    formData.append('price', this.movieForm.get('price')!.value);
+    formData.append('startDate', this.movieForm.get('startDate')!.value);
+    formData.append('endDate', this.movieForm.get('endDate')!.value);
+    formData.append('movieCategory', this.movieForm.get('movieCategory')!.value);
+
+
+    console.log(formData);
+    console.log(this.file)
+
+    this.service.CreateMovie(formData).subscribe(response => {
+        alert(response)
       });
   }
 
   title = 'Angular-TicketsManagement';
-  protected name = name;
-  protected  description = description;
-  protected  price = price;
-  protected  imageFile = imageFile;
-  protected  startDate = startDate;
-  protected  endDate = endDate;
-  protected  movieCategory = movieCategory;
+
 }
